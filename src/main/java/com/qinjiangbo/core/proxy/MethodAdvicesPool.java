@@ -1,4 +1,4 @@
-package com.qinjiangbo.core.pool;
+package com.qinjiangbo.core.proxy;
 
 import java.util.HashMap;
 import java.util.List;

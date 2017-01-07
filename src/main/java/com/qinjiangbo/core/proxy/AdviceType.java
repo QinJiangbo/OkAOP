@@ -1,4 +1,4 @@
-package com.qinjiangbo.core.pool;
+package com.qinjiangbo.core.proxy;
 
 /**
  * @date: 05/01/2017 8:55 PM
