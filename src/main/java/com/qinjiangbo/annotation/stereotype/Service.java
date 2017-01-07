@@ -1,4 +1,4 @@
-package com.qinjiangbo.annotation;
+package com.qinjiangbo.annotation.stereotype;
 
 import java.lang.annotation.*;
 

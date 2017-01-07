@@ -1,6 +1,6 @@
 package com.qinjiangbo.core;
 
-import com.qinjiangbo.annotation.Service;
+import com.qinjiangbo.annotation.stereotype.Service;
 import com.qinjiangbo.config.ContextConfiguration;
 import com.qinjiangbo.core.factory.BeanFactory;
 import com.qinjiangbo.util.BeanUtils;

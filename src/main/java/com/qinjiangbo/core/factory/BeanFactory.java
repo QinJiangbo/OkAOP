@@ -1,6 +1,6 @@
 package com.qinjiangbo.core.factory;
 
-import com.qinjiangbo.annotation.Aspect;
+import com.qinjiangbo.annotation.stereotype.Aspect;
 import com.qinjiangbo.exception.ConflictedBeanException;
 
 import java.util.HashMap;

@@ -1,13 +1,13 @@
-package com.qinjiangbo.annotation;
+package com.qinjiangbo.annotation.stereotype;
 
 import java.lang.annotation.*;
 
 /**
- * @date: 07/01/2017 8:50 PM
+ * @date: 03/01/2017 11:12 AM
  * @author: qinjiangbo@github.io
  */
 @Target(ElementType.TYPE)
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Component {
+public @interface Aspect {
 }
