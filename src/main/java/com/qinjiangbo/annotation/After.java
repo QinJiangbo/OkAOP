@@ -7,8 +7,8 @@ import java.lang.annotation.*;
  * @author: qinjiangbo@github.io
  */
 @Target(ElementType.METHOD)
-@Documented
 @Retention(RetentionPolicy.RUNTIME)
+@Documented
 public @interface After {
     String value();
 }
