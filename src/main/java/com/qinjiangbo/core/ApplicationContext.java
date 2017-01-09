@@ -49,34 +49,33 @@ public class ApplicationContext {
      * get bean by name and type, but the bean is processed
      *
      * @param name
-     * @param clazz
      * @param <T>
      * @return
      */
-    public <T> T getBean(String name, Class<T> clazz) {
+    public <T> T getBean(String name) {
         Class<?> clazz0 = beanFactory.getBean(name);
-        return BeanUtils.getBean(name, clazz0, clazz);
+        return BeanUtils.getBean(name, clazz0);
     }
 
     /**
      * get bean by name and type if parameters provided
      *
      * @param name
-     * @param clazz
      * @param args
      * @param <T>
      * @return
      */
-    public <T> T getBean(String name, Class<T> clazz, Object... args) {
+    public <T> T getBean(String name, Object... args) {
         Class<?> clazz0 = beanFactory.getBean(name);
-        return BeanUtils.getBean(name, clazz0, clazz, args);
+        return BeanUtils.getBean(name, clazz0, args);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException {
         ContextConfiguration contextConfiguration = new ContextConfiguration();
         contextConfiguration.setPackages("com.qinjiangbo.demo");
-        Con con = new ApplicationContext(contextConfiguration).getBean("con", Con.class);
-        System.out.println(con);
+        Com com = new ApplicationContext(contextConfiguration).getBean("com", "Richard", 18);
+        System.out.println(com);
+//        System.out.println(Com.class.getDeclaredConstructor(String.class, int.class).getName());
     }
 
 }

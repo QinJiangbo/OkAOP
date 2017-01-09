@@ -8,4 +8,12 @@ import com.qinjiangbo.annotation.stereotype.Component;
  */
 @Component
 public class Com {
+
+    private String name;
+    private Integer age;
+
+    public Com(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 }

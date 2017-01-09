@@ -14,17 +14,12 @@ public class BeanUtils {
      *
      * @param name
      * @param clazz0
-     * @param target
      * @param <T>
      * @return
      */
-    public static <T> T getBean(String name, Class<?> clazz0, Class<T> target) {
+    public static <T> T getBean(String name, Class<?> clazz0) {
         try {
-            if (clazz0 == target) {
-                return target.newInstance();
-            } else {
-                return (T) clazz0.newInstance();
-            }
+            return (T) clazz0.newInstance();
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -38,26 +33,22 @@ public class BeanUtils {
      *
      * @param name
      * @param clazz0
-     * @param target
      * @param args
      * @param <T>
      * @return
      */
-    public static <T> T getBean(String name, Class<?> clazz0, Class<T> target, Object... args) {
+    public static <T> T getBean(String name, Class<?> clazz0, Object... args) {
+        Class<?>[] classes = new Class[args.length];
+        Class<?>[] primitiveClasses = new Class[args.length];
         try {
-            Class<?>[] classes = new Class[args.length];
             int i = 0;
             for (Object object : args) {
                 classes[i] = object.getClass();
+                primitiveClasses[i] = ReflectionUtils.convertToPrimitiveType(classes[i]);
                 i++;
             }
-            if (clazz0 == target) {
-                Constructor<T> constructor = target.getDeclaredConstructor(classes);
-                return constructor.newInstance(args);
-            } else {
-                Constructor constructor = clazz0.getDeclaredConstructor(classes);
-                return (T) constructor.newInstance(args);
-            }
+            Constructor constructor = clazz0.getConstructor(classes);
+            return (T) constructor.newInstance(args);
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
