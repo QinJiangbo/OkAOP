@@ -5,8 +5,6 @@ import com.qinjiangbo.annotation.stereotype.Controller;
 import com.qinjiangbo.annotation.stereotype.Service;
 import com.qinjiangbo.config.ContextConfiguration;
 import com.qinjiangbo.core.factory.BeanFactory;
-import com.qinjiangbo.demo.Com;
-import com.qinjiangbo.demo.Con;
 import com.qinjiangbo.util.BeanUtils;
 import com.qinjiangbo.util.CollectionUtils;
 import com.qinjiangbo.util.PackageUtils;
@@ -73,9 +71,6 @@ public class ApplicationContext {
     public static void main(String[] args) throws NoSuchMethodException {
         ContextConfiguration contextConfiguration = new ContextConfiguration();
         contextConfiguration.setPackages("com.qinjiangbo.demo");
-        Com com = new ApplicationContext(contextConfiguration).getBean("com", "Richard", 18);
-        System.out.println(com);
-//        System.out.println(Com.class.getDeclaredConstructor(String.class, int.class).getName());
     }
 
 }
