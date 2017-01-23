@@ -1,4 +1,4 @@
-package com.qinjiangbo.core.factory;
+package com.qinjiangbo.core.proxy;
 
 /**
  * @date: 23/01/2017 9:05 AM
